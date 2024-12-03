@@ -1,0 +1,10 @@
+
+nejdříve zjistit jestli vpravo není číslo, když ano, tak jestli další od tohoto čísla není číslo
+dokud tam jsou čísla, ty si postupně ukládat do stringu a až je to komplet, tak zjistit délku stringu.
+pak si vytvořit cyklus, který zkontroluje řádek nejdřív jestli jeho index není menší než nula, a zda první nebo poslední ndex řádku není taky mimo rámec
+pokunad v range index prvního kontrolovaného čísla až délka uloženého čísla ve stringu.
+ pak zkontrolovat čísla na levo od kontrolovaného čísla pokud není jeho index 0
+ pak zkontrolovat čísla na levo od celého uloženého čísla pokud není jeho index větší než délka řádku
+ a pak to stejné co s řádkem nad i s řádkem pod pokud není mimo rámec
+
+ dále v cyklu, pokračovat, ale pokud na levo od kontrolovaného čísla je číslo, tak číslo neukládat.

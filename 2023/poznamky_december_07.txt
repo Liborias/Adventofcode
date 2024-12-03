@@ -1,0 +1,32 @@
+Ve hře Camel Cards dostanete seznam karet a vaším úkolem je seřadit je podle síly jednotlivých karet. Ruku tvoří pět karet označených jako A, K, Q, J, T, 9, 8, 7, 6, 5, 4, 3 nebo 2. Relativní síla každé karty se řídí tímto pořadím, kde A je nejvyšší a 2 je nejnižší.
+
+Každý list je přesně jednoho typu. Od nejsilnější po nejslabší jsou to:
+
+Pětka, kde všech pět karet má stejnou značku: AAAAA
+Čtyřka, kde čtyři karty mají stejné označení a jedna karta má jiné označení: AA8AA
+Full house, kde tři karty mají stejnou značku a zbývající dvě karty mají jinou značku: 23332
+Trojka, kde tři karty mají stejnou značku a zbývající dvě karty se liší od ostatních karet v ruce: TTT98
+Dva páry, kde dvě karty mají stejnou značku, další dvě karty mají druhou značku a zbývající karta má třetí značku: 23432
+Jedna dvojice, kde dvě karty mají společný štítek a zbylé tři karty mají jiný štítek než dvojice a každá jiná: A23A4
+Vysoká karta, kde jsou všechny karty označeny odlišně: 23456
+Ruce jsou primárně seřazeny podle typu; například každý full house je silnější než jakákoli trojice.
+
+Pokud mají dvě ruce stejný typ, platí druhé pravidlo řazení. Začněte porovnáním první karty v každém listu. Pokud se tyto karty liší, je za silnější považován list se silnější první kartou. Pokud však mají první karty v každém listu stejné označení, přejděte k posouzení druhé karty v každém listu. Pokud se liší, vyhrává list s vyšší druhou kartou; v opačném případě pokračujte třetí kartou v každém listu, pak čtvrtou a nakonec pátou.
+
+Takže 33332 a 2AAAA jsou obě čtyřkové kombinace, ale 33332 je silnější, protože její první karta je silnější. Podobně 77888 a 77788 jsou oba full house, ale 77888 je silnější, protože jeho třetí karta je silnější (a oba listy mají stejnou první a druhou kartu).
+
+Chcete-li hrát Camel Cards, dostanete seznam listů a jejich odpovídající nabídku (vaše zadání hádanky). Například:
+
+32T3K 765
+T55J5 684
+KK677 28
+KTJJT 220
+QQQJA 483
+Tento příklad ukazuje pět listů; za každým listem je uvedena výše nabídky. Každý list vyhrává částku, která se rovná jeho nabídce vynásobené jeho pořadím, přičemž nejslabší list získává pořadí 1, druhý nejslabší list pořadí 2 a tak dále až k nejsilnějšímu listu. Protože v tomto příkladu je pět listů, nejsilnější list bude mít pořadí 5 a jeho nabídka bude vynásobena 5.
+
+Prvním krokem je tedy seřadit ruce podle jejich síly:
+
+32T3K je jediný pár a všechny ostatní kombinace jsou silnějšího typu, takže získává pozici 1.
+KK677 a KTJJT jsou oba dva páry. Jejich první karty mají obě stejné označení, ale druhá karta KK677 je silnější (K vs. T), takže KTJJT dostane hodnost 2 a KK677 hodnost 3.
+T55J5 a QQQJA jsou obě trojice. QQQJA má silnější první kartu, takže získává hodnost 5 a T55J5 získává hodnost 4.
+Nyní můžete určit celkovou výhru této sady listů tak, že sečtete výsledek vynásobení nabídky každého listu s jeho hodnstí (765 * 1 + 220 * 2 + 28 * 3 + 684 * 4 + 483 * 5). Celková výhra v tomto příkladu je tedy 6440.

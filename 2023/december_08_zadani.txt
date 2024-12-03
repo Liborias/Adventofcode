@@ -1,0 +1,23 @@
+Po prozkoumání map na chvíli vyčnívají dva uzly: AAA a ZZZ. Cítíš se AAA je místo, kde jste nyní, a musíte postupovat podle pokynů vlevo / vpravo, dokud se nedostanete ZZZ.
+
+Tento formát definuje každý uzel sítě jednotlivě. Například:
+
+RL
+
+AAA = (BBB, CCC)
+BBB = (DDD, EEE)
+CCC = (ZZZ, GGG)
+DDD = (DDD, DDD)
+EEE = (EEE, EEE)
+GGG = (GGG, GGG)
+ZZZ = (ZZZ, ZZZ)
+Počínaje AAAmusíte vyhledejte další prvek na základě další instrukce vlevo / vpravo ve vašem vstupu. V tomto příkladu začněte AAA a jít správně (R) výběrem správného prvku AAA, CCC. Pak, L znamená vybrat vlevo prvek CCC, ZZZ. Postupováním podle pokynů vlevo / vpravo se dostanete ZZZ v 2 kroky.
+
+Samozřejmě možná nenajdete ZZZ hned. Pokud vám dojde pokyny vlevo / vpravo, opakujte podle potřeby celou posloupnost pokynů: RL opravdu znamená RLRLRLRLRLRLRLRL... a tak dále. Například zde je situace, která nabývá 6 kroky k dosažení ZZZ:
+
+LLR
+
+AAA = (BBB, BBB)
+BBB = (AAA, ZZZ)
+ZZZ = (ZZZ, ZZZ)
+Od začátku AAA, postupujte podle pokynů vlevo / vpravo. Kolik kroků je třeba dosáhnout ZZZ?

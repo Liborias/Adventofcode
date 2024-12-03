@@ -1,0 +1,95 @@
+Příklad:
+
+seeds: 79 14 55 13
+
+seed-to-soil map:
+50 98 2
+52 50 48
+
+soil-to-fertilizer map:
+0 15 37
+37 52 2
+39 0 15
+
+fertilizer-to-water map:
+49 53 8
+0 11 42
+42 0 7
+57 7 4
+
+water-to-light map:
+88 18 7
+18 25 70
+
+light-to-temperature map:
+45 77 23
+81 45 19
+68 64 13
+
+temperature-to-humidity map:
+0 69 1
+1 0 69
+
+humidity-to-location map:
+60 56 37
+56 93 4
+
+Almanach začíná výčtem semen, která je třeba zasadit: semena 79, 14, 55 a 13.
+
+Zbytek almanachu obsahuje seznam map, které popisují, jak převést čísla ze zdrojové kategorie na čísla v cílové kategorii.
+To znamená, že část, která začíná mapou semen do půdy: popisuje, jak převést číslo semen (zdroj) na číslo půdy (cíl).
+Díky tomu zahradník a jeho tým ví, jakou půdu použít s jakými semeny, jakou vodu použít s jakým hnojivem atd.
+
+Namísto toho, aby mapy postupně uváděly každé zdrojové číslo a jemu odpovídající cílové číslo, popisují celé rozsahy čísel, které lze převést.
+Každý řádek v mapě obsahuje tři čísla: počátek cílového rozsahu, počátek zdrojového rozsahu a délku rozsahu.
+
+Uvažujme znovu příklad mapy pro převod osiva na půdu:
+
+seeds: 79 14 55 13
+
+seed-to-soil map:
+50 98 2
+52 50 48
+
+První řádek má počátek cílového rozsahu 50, počátek zdrojového rozsahu 98 a délku rozsahu 2. Tento řádek znamená, že zdrojový rozsah začíná na 98 a obsahuje dvě hodnoty:
+Cílový rozsah má stejnou délku, ale začíná na 50, takže jeho dvě hodnoty jsou 50 a 51. Díky této informaci víte, že číslo semínka 98 odpovídá číslu půdy 50
+a že číslo semínka 99 odpovídá číslu půdy 51.
+
+Druhý řádek znamená, že zdrojový rozsah začíná na 50 a obsahuje 48 hodnot: 50, 51, ..., 96, 97.
+Tomu odpovídá cílový rozsah začínající na 52 a obsahující rovněž 48 hodnot: Číslo semene 53 tedy odpovídá číslu půdy 55.
+
+Jakákoli zdrojová čísla, která nejsou mapována, odpovídají stejnému cílovému číslu. Takže semínku číslo 10 odpovídá číslo půdy 10.
+
+Celý seznam čísel osiva a jim odpovídajících čísel půdy tedy vypadá takto:
+ kdy tři tečky znamenájí až, tedy 0,1 až 48, 49 zde začíná posun čísel půdy který trvá až do , který :
+
+
+seed  soil
+0     0
+1     1
+...   ...
+48    48
+49    49
+50    52
+51    53
+...   ...
+96    98
+97    99
+98    50
+99    51
+Pomocí této mapy můžete vyhledat číslo půdy potřebné pro každé počáteční číslo osiva:
+
+Číslo osiva 79 odpovídá číslu půdy 81.
+Číslo osiva 14 odpovídá půdě číslo 14.
+Číslo osiva 55 odpovídá půdě číslo 57.
+Číslo osiva 13 odpovídá půdě číslo 13.
+
+Zahradník a jeho tým chtějí začít co nejdříve, proto by rádi znali nejbližší místo, které potřebuje osivo. Pomocí těchto map najděte nejnižší číslo lokality, které odpovídá některému z počátečních semen. K tomu budete muset každé číslo semínka převést přes další kategorie, dokud nenajdete odpovídající číslo lokality. V tomto příkladu jsou odpovídajícími typy:
+
+Semena 79, půda 81, hnojivo 81, voda 81, světlo 74, teplota 78, vlhkost 78, umístění 82.
+Osivo 14, půda 14, hnojivo 53, voda 49, světlo 42, teplota 42, vlhkost 43, umístění 43.
+Osivo 55, půda 57, hnojivo 57, voda 53, světlo 46, teplota 82, vlhkost 82, poloha 86.
+Osivo 13, půda 13, hnojivo 52, voda 41, světlo 34, teplota 34, vlhkost 35, poloha 35.
+Nejnižší číslo polohy v tomto příkladu je tedy 35.
+
+Jaké je nejnižší číslo polohy, které odpovídá některému z počátečních čísel semen?
